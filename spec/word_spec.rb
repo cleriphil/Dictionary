@@ -1,5 +1,6 @@
 require('rspec')
 require('word')
+require('definition')
 
 describe(Word) do
   before() do
@@ -16,6 +17,15 @@ describe(Word) do
     it('returns the list of definitions and starts empty') do
     word_1 = Word.new("bottle")
     expect(word_1.definitions()).to(eq([]))
+    end
+  end
+
+  describe('#add_definition') do
+    it('adds a definition to a word') do
+      word_1 = Word.new("baby")
+      definition_1 = Definition.new({ :meaning => "a small human", :part_of_speech => "noun"})
+      word_1.add_definition(definition_1)
+      expect(word_1.definitions()).to(eq([definition_1]))
     end
   end
 

@@ -12,7 +12,12 @@ describe('the path of the Word class', {:type => :feature}) do
   expect(page).to have_content('Your word has been added!')
   click_link('Back Home')
   click_link('paint')
-  expect(page).to have_content('This is your word')
-  expect(page).to have_content('paint')
+  expect(page).to have_content('Definitions for paint')
+  fill_in('part_of_speech', :with => 'noun')
+  fill_in('meaning', :with => 'a liquid substance')
+  click_button('Add Definition')
+  expect(page).to have_content('Your definition has been added')
+  click_link('Back Home')
+  expect(page).to have_content('Your Dictionary')
   end
 end

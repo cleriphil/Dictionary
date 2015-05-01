@@ -7,8 +7,8 @@ describe(Definition) do
   end
   describe('#meaning') do
     it('returns the meaning of the word') do
-      baby = Definition.new({ :meaning => "a small human", :part_of_speech => "noun"})
-      expect(baby.meaning()).to(eq("a small human"))
+      definition_1 = Definition.new({ :meaning => "a small human", :part_of_speech => "noun"})
+      expect(definition_1.meaning()).to(eq("a small human"))
     end
   end
   describe('.all') do
@@ -18,15 +18,15 @@ describe(Definition) do
   end
   describe('#save') do
     it('saves the definition to an array of saved definitions') do
-      baby = Definition.new({ :meaning => "a small human", :part_of_speech => "noun"})
-      baby.save()
-      expect(Definition.all()).to(eq([baby]))
+      definition_1 = Definition.new({ :meaning => "a small human", :part_of_speech => "noun"})
+      definition_1.save()
+      expect(Definition.all()).to(eq([definition_1]))
     end
   end
   describe('.clear') do
     it('clears the array of saved definitions') do
-      baby = Definition.new({ :meaning => "a small human", :part_of_speech => "noun"})
-      baby.save()
+      definition_1 = Definition.new({ :meaning => "a small human", :part_of_speech => "noun"})
+      definition_1.save()
       Definition.clear()
       expect(Definition.all()).to(eq([]))
     end
