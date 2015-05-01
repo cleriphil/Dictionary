@@ -1,6 +1,7 @@
-Dictionary by Cleri Philiastides
+(note: I had issues with Heroku again. First I successfully deployed it, but then I changed my code so I deleted my first Heroku app and made a new one, but I couldn't get the second one to work.)
 
-Heroku: https://shrouded-caverns-8660.herokuapp.com/
+
+Dictionary by Cleri Philiastides
 
 Description:
 
