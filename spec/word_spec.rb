@@ -11,6 +11,14 @@ describe(Word) do
       expect(word_1.name()).to(eq("bottle"))
     end
   end
+
+  describe('#definitions') do
+    it('returns the list of definitions and starts empty') do
+    word_1 = Word.new("bottle")
+    expect(word_1.definitions()).to(eq([]))
+    end
+  end
+
   describe('.all') do
     it('is an empty array at first') do
       expect(Word.all()).to(eq([]))
@@ -48,6 +56,4 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
-
-
 end
