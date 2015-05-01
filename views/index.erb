@@ -1,11 +1,16 @@
 <h1>Your Dictionary</h2>
 <h2>Words</h2>
 
+
+<% if @words.empty?() %>
+<p><%= "There are no words in your dictionary yet" %></p>
+<% else %>
 <ul>
 <% @words.each() do |word| %>
   <li><a href="/words/<%= word.id() %>"><%= word.name() %></li>
 <% end %>
 </ul>
+<% end %>
 
 <form action="/words" method="post">
   <!-- do I need special stuff here? -->
