@@ -2,6 +2,9 @@ require('rspec')
 require('word')
 
 describe(Word) do
+  before() do
+    Word.clear()
+  end
   describe('#name') do
     it('returns the name of the word') do
       word_1 = Word.new("bottle")
@@ -20,6 +23,21 @@ describe(Word) do
       expect(Word.all()).to(eq([word_1]))
     end
   end
+  describe('#id') do
+    it('returns the id of the word') do
+      word_1 = Word.new("bottle")
+      word_1.save()
+      expect(word_1.id()).to(eq(1)) #check
+    end
+  end
+  describe('.find') do
+    it('returns the word based on its id') do
+      word_1 = Word.new("sculpture")
+      word_1.save()
+      expect(Word.find(word_1.id())).to(eq(word_1))
+    end
+  end
+
   describe('.clear') do
     it('empties the array of saved words') do
       word_1 = Word.new("sculpture")
@@ -30,5 +48,6 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+
 
 end
