@@ -1,6 +1,23 @@
 
-<h1>This is your word</h1>
-<h1><%= @word.name() %></h1>
+<h1>Your words:</h1>
 
 
-<!-- a form to add a definition -->
+<ul>
+<% @definitions.each() do |definition| %>
+<a href="/definitions/<%= definition.id()  %>"><%= @definition.part_of_speech() %>
+<% end %>
+</ul>
+
+
+
+
+<h2>Add a Definition</h2>
+<form action="/definitions" method="post">
+  <label for="part_of_speech">Part of Speech:</label>
+  <input id="part_of_speech" name="part_of_speech" type="text">
+
+  <label for="meaning">Meaning:</label>
+  <input id="meaning" name="meaning" type="text">
+
+  <button type="submit">Add Definition</button>
+</form>
