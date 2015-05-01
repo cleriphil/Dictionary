@@ -12,14 +12,12 @@ describe(Word) do
       expect(word_1.name()).to(eq("bottle"))
     end
   end
-
   describe('#definitions') do
     it('returns the list of definitions and starts empty') do
     word_1 = Word.new("bottle")
     expect(word_1.definitions()).to(eq([]))
     end
   end
-
   describe('#add_definition') do
     it('adds a definition to a word') do
       word_1 = Word.new("baby")
@@ -28,7 +26,6 @@ describe(Word) do
       expect(word_1.definitions()).to(eq([definition_1]))
     end
   end
-
   describe('.all') do
     it('is an empty array at first') do
       expect(Word.all()).to(eq([]))
@@ -55,7 +52,6 @@ describe(Word) do
       expect(Word.find(word_1.id())).to(eq(word_1))
     end
   end
-
   describe('.clear') do
     it('empties the array of saved words') do
       word_1 = Word.new("sculpture")

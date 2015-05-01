@@ -6,12 +6,9 @@ class Word
       @id = @@words.length().+(1)
       @definitions = []
     end
-#how will definitions method be used?
-
     define_method(:add_definition) do |definition|
       @definitions.push(definition)
     end
-
     define_singleton_method(:all) do
       @@words
     end
@@ -21,7 +18,6 @@ class Word
     define_singleton_method(:clear) do
       @@words = []
     end
-
     define_singleton_method(:find) do |identification|
       this_word = nil
         @@words.each() do |word|
