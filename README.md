@@ -1,7 +1,4 @@
-
-
-
-##Dictionary by Cleri Philiastides
+##Dictionary
 
 ###Description:
 
